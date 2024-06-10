@@ -7,9 +7,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY ["WebApplication1/OngTDE.BackEnd.csproj", "WebApplication1/"]
 
-RUN dotnet restore "WebApplication1/OngTDE.BackEnd.csproj"
+RUN dotnet restore "src/WebApplication1/OngTDE.BackEnd.csproj"
 COPY . .
-WORKDIR "/src/WebApplication1"
+WORKDIR "src/WebApplication1"
 RUN dotnet build "OngTDE.BackEnd.csproj" --c Release -o /app/build
 
 FROM build AS publish
