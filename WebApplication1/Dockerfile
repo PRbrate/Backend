@@ -10,7 +10,7 @@ COPY ["WebApplication1/OngTDE.BackEnd.csproj", "WebApplication1/"]
 RUN dotnet restore "WebApplication1/OngTDE.BackEnd.csproj"
 COPY . .
 WORKDIR "WebApplication1"
-RUN dotnet build "OngTDE.BackEnd.csproj" --c Release -o /app/build
+RUN dotnet build "OngTDE.BackEnd.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "OngTDE.BackEnd.csproj" -c Release -o /app/publish
