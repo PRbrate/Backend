@@ -6,6 +6,8 @@ using OngTDE.BackEnd.Repositories.Inteface;
 
 namespace OngTDE.BackEnd.Repositories
 {
+ 
+    //classe concreta para o acesso ao banco de dados
     public class UserRepository : IUserRepository
     {
         private readonly DataBaseContext _dbcontext;

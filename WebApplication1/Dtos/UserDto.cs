@@ -1,5 +1,6 @@
 ﻿namespace OngTDE.BackEnd.Dtos
 {
+    //Criando DTO (entidade de visibilidade Para os Usuários)
     public class UserDto
     {
         public UserDto(int id, string nome, string telefone, string email, string role)

@@ -5,6 +5,7 @@ namespace OngTDE.BackEnd.Repositories
 {
     public class DataBaseContext : DbContext
     {
+        //construção do banco através de migrations
         public DataBaseContext(DbContextOptions<DataBaseContext> options)
            : base(options)
         {

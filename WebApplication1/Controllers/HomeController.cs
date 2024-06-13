@@ -9,12 +9,15 @@ using System.Text.RegularExpressions;
 
 namespace OngTDE.BackEnd.Controllers
 {
+
+    //controlador Api 
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class HomeController : ControllerBase
     {
  
+        //utilizadno o repositório através de interface
         private readonly IUserRepository _repository;
 
         public HomeController(IUserRepository repository)
@@ -49,6 +52,8 @@ namespace OngTDE.BackEnd.Controllers
                 return NotFound(new { message = "Usuário ou Senha invalidos" });
             }
 
+
+            //geranto Token para autorização de acesso
             var token = TokenService.GenerateToken(user);
             user.Password = "";
             return new
@@ -67,7 +72,7 @@ namespace OngTDE.BackEnd.Controllers
             if (!string.Equals(user.Roles, "Admin"))
             {
                 user.Roles = "usuario";
-            }            
+            }//código regex para validação de e-mail            
             if (!System.Text.RegularExpressions.Regex.IsMatch(user.email, "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$"))
             {
                throw new Exception("e-mail inválido, por favor colocar um e-mail válido");

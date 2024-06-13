@@ -5,6 +5,7 @@ namespace OngTDE.BackEnd.Models
 {
     public class User
     {
+        //Entidade Usuário
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

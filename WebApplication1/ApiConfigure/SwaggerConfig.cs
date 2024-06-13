@@ -4,6 +4,8 @@ namespace OngTDE.BackEnd.ApiConfigure
 {
     public static class SwaggerConfig
     {
+
+        //configurando o Swagger para receber o token de autorização JWT BEARER
         public static WebApplicationBuilder AddSwaggerConfig(this WebApplicationBuilder builder)
         {
             builder.Services.AddEndpointsApiExplorer();
